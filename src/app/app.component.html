@@ -1,2 +1,17 @@
-<h1>Hello World</h1>
-<h2 class="myclass">{{title}}</h2>
+<br />
+<div class="contianer" style="text-align: center;">
+    <h4>
+        <a routerLinkActive="active" routerLink="/home" style="font-weight: 900;">
+            Home
+        </a>
+        |
+        <a routerLinkActive="active" routerLink="/employee" style="font-weight: 900;">
+            Employees
+        </a>
+        |
+        <a routerLinkActive="active" routerLink="/salary" style="font-weight: 900;">
+            Salary
+        </a>
+    </h4>
+    <router-outlet></router-outlet>
+</div>
