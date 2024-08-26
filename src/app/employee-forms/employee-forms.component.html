@@ -1,1 +1,65 @@
-<p>employee-forms works!</p>
+<form novalidate autocomplete="off" #form='ngForm' (submit)="onSubmit(form)" class="mx-5">
+    <input type="hidden" name="emp_id" [value]="service.formData.emp_id">
+
+    <div class="form-row" > 
+        <div class="form-group col-md-4">
+            <label>Employee</label>
+            <input type="text" name="emp_name" id="" class="form-control form-control-lg" #emp_name='ngModel'
+                [(ngModel)]="service.formData.emp_name" required [class.invalid]='emp_name.invalid && emp_name.touched'>
+        </div>
+        <div class="form-group col-md-4">
+            <label>EMPLOYEE EMAIL</label>
+            <input type='text' class="form-control form-control-lg" name="emp_email" #emp_email="ngModel"
+                [(ngModel)]="service.formData.emp_email" required
+                [class.invalid]="emp_email.invalid && emp_email.touched">
+        </div>
+        <div class="form-group col-md-4">
+            <label>GENDER</label>
+            <input type='text' class="form-control form-control-lg" name="emp_gender" #emp_gender="ngModel"
+                [(ngModel)]="service.formData.emp_gender" required
+                [class.invalid]="emp_gender.invalid && emp_gender.touched">
+        </div>
+    </div>
+
+
+    <div class="form-row">
+        <div class="form-group col-md-2">
+            <label>DEPENDANTS</label>
+            <input type="noOfDependants" type="number" maxlength="1" class="form-control form-control-lg"
+                name="noOfDependants" #noOfDependants="ngModel" [(ngModel)]="service.formData.noOfDependants" required
+                [class.invalid]="noOfDependants.invalid && noOfDependants.touched">
+        </div>
+        <div class="form-group col-md-2">
+            <label>ADDITIONS($)</label>
+            <input class="form-control form-control-lg" type="number" name="additions" #additions="ngModel"
+                [(ngModel)]="service.formData.additions" required
+                [class.invalid]="additions.invalid && additions.touched">
+        </div>
+        <div class="form-group col-md-2">
+            <label>INCOME TEX(%)</label>
+            <input class="form-control form-control-lg" type="number" name="itex" #itex="ngModel"
+                [(ngModel)]="service.formData.itex" required [class.invalid]="itex.invalid && itex.touched">
+        </div>
+        <div class="form-group col-md-2">
+            <label>CPP(%)</label>
+            <input class="form-control form-control-lg" type="number" name="cpp" #cpp="ngModel"
+                [(ngModel)]="service.formData.cpp" required [class.invalid]="cpp.invalid && cpp.touched">
+        </div>
+        <div class="form-group col-md-2">
+            <label>EI(%)</label>
+            <input class="form-control form-control-lg" type="number" name="ei" #ei="ngModel"
+                [(ngModel)]="service.formData.ei" required [class.invalid]="ei.invalid && ei.touched">
+        </div>
+        <div class="form-group col-md-2">
+            <label>Final Salary($)</label>
+            <input class="form-control form-control-lg" type="number" name="finalsalary" #finalsalary="ngModel"
+                [(ngModel)]="service.formData.grosssalary" required
+                [class.invalid]="finalsalary.invalid && finalsalary.touched">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+    </div>
+
+</form>

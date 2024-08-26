@@ -1,1 +1,32 @@
-<p>employee-salary works!</p>
+<div class="jumbotron py-3 mx-5"  style="background-color:#17a2b8;color:white;margin-top:30px;">
+    <h1 class="display-4 text-center" style="background-color:#17a2b8">Payroll Application</h1>
+</div>
+
+<div class="row mx-3">
+
+    <div class="col-md-12">
+
+        <table class="table table-bordered">
+
+            <thead>
+                <tr>
+                    <th>Count</th>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let sl of service.listsalary,let i = index">
+                    <td>{{i + 1}}</td>
+                    <td>{{sl.emp_id}}</td>
+                    <td>{{sl.emp_name}}</td>
+                    <td>{{sl.finalvalue}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+</div>

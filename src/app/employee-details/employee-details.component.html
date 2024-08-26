@@ -10,7 +10,7 @@
 
 
     <div class="col-md-12">
-        <table class="table table-bordered table-hover m-3" >
+        <table class="table table-bordered table-hover">
             <thead>
                 <tr>
                     <th>Employee ID</th>
@@ -19,19 +19,21 @@
                     <th>Gender</th>
                     <th>Dependants</th>
                     <th>Additions</th>
-
+                    <th>Gross Salary</th>
                     <th>Delete Record</th>
                 </tr>
             </thead>
             <tbody>
 
                 <tr *ngFor='let pd of service.list'>
-                    <td>{{pd.emp_id}}</td>
-                    <td>{{pd.emp_name}}</td>
-                    <td>{{pd.emp_email}}</td>
-                    <td>{{pd.emp_gender}}</td>
-                    <td>{{pd.noOfDependants}}</td>
-                    <td>{{pd.additions}}</td>
+                    <td (click)="populateForm(pd)">{{pd.emp_id}}</td>
+                    <td (click)="populateForm(pd)">{{pd.emp_name}}</td>
+                    <td (click)="populateForm(pd)">{{pd.emp_email}}</td>
+                    <td (click)="populateForm(pd)">{{pd.emp_gender}}</td>
+                    <td (click)="populateForm(pd)">{{pd.noOfDependants}}</td>
+                    <td (click)="populateForm(pd)">{{pd.additions}}</td>
+                    <td (click)="populateForm(pd)">{{pd.grosssalary}}</td>
+
                     <td style="text-align: center;">
                         <i class="far fa-trash-alt fa-lg text-danger" (click)='onDelete(pd.emp_id)'>
 

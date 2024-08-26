@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EmployeesService } from '../shared/employees.service';
 
 @Component({
   selector: 'app-employee-salary',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styles: ``
 })
 export class EmployeeSalaryComponent {
+  constructor(public service:EmployeesService){}
 
+  ngOnInit():void{
+    this.service.refreshSalary();
+  }
 }
