@@ -1,4 +1,4 @@
-export class EMployees {
+export class Employees {
     emp_id:number = 0;
     emp_name:string = "";
     emp_email:string="";
@@ -8,5 +8,5 @@ export class EMployees {
     itex:number=0;
     cpp:number=0;
     ei:number=0;
-    finalsalary:number=0; 
+    grosssalary:number=0; 
 }

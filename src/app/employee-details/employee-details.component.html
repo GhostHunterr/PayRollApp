@@ -1,1 +1,48 @@
-<p>employee-details works!</p>
+<div class="jumbotron py-3" style="background-color:#17a2b8;color:white;margin-top:30px; margin: 30px 50px">
+    <h1 class="display-4 text-center">PayRoll App</h1>
+</div>
+
+<div class="row">
+
+    <div class="col-md-12">
+        <app-employee-forms></app-employee-forms>
+    </div>
+
+
+    <div class="col-md-12">
+        <table class="table table-bordered table-hover m-3" >
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Dependants</th>
+                    <th>Additions</th>
+
+                    <th>Delete Record</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor='let pd of service.list'>
+                    <td>{{pd.emp_id}}</td>
+                    <td>{{pd.emp_name}}</td>
+                    <td>{{pd.emp_email}}</td>
+                    <td>{{pd.emp_gender}}</td>
+                    <td>{{pd.noOfDependants}}</td>
+                    <td>{{pd.additions}}</td>
+                    <td style="text-align: center;">
+                        <i class="far fa-trash-alt fa-lg text-danger" (click)='onDelete(pd.emp_id)'>
+
+                        </i>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+    </div>
+
+
+</div>
